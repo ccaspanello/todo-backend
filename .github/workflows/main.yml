@@ -38,7 +38,7 @@ jobs:
     - name: Build and analyze
       run: |
         mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
-          -Dsonar.projectKey=JavaMonkey-io_todo-backend
+          -Dsonar.projectKey=JavaMonkey-io_todo-backend \
           -Dsonar.organization=JavaMonkey-io \
           -Dsonar.host.url=https://sonarcloud.io \
           -Dsonar.coverage.jacoco.xmlReportPaths=${project.build.directory}/site/jacoco/jacoco.xml
