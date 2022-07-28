@@ -1,5 +1,6 @@
 app:
-  frontend-url: http://localhost:6969
+  frontend:
+    url: http://localhost:3000
 
 management:
   endpoints:
@@ -7,5 +8,5 @@ management:
       exposure:
         include: health, info
       cors:
-        allowed-origin-patterns: ${app.frontend-url}
+        allowed-origin-patterns: ${app.frontend.url}
 
