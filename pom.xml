@@ -17,6 +17,10 @@
     <docker.registry>docker.io/library</docker.registry>
   </properties>
 
+  <scm>
+    <developerConnection>scm:git:https://github.com/JavaMonkey-io/todo-backend.git</developerConnection>
+  </scm>
+
   <dependencyManagement>
     <dependencies>
       <dependency>
