@@ -15,6 +15,6 @@ public class HomeControllerTest {
 
     @Test
     public void contextLoads() throws Exception {
-        assertThat(controller.greeting()).isEqualTo("Hello, World");
+        assertThat(controller.greeting()).isEqualTo("Hello, World!");
     }
 }
