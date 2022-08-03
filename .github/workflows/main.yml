@@ -3,8 +3,6 @@ name: Main
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
   build:
@@ -59,12 +57,13 @@ jobs:
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v1
 
+    - name: Set env
+      run: echo "IMAGE_TAG=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_ENV
+
     - name: Build, tag, and push docker image to Amazon ECR
       env:
         REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         REPOSITORY: todo-backend
-        # TODO Replace with version from maven
-        IMAGE_TAG: 1.0.0-SNAPSHOT
       run: |
         mvn spring-boot:build-image -DskipTests -Ddocker.registry=$REGISTRY
         docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
