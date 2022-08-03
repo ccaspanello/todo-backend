@@ -17,4 +17,5 @@ public class HomeControllerTest {
     public void contextLoads() throws Exception {
         assertThat(controller.greeting()).isEqualTo("Hello, World!");
     }
+
 }
