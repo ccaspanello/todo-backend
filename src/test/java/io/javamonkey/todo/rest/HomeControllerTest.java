@@ -13,8 +13,8 @@ public class HomeControllerTest {
     @Autowired
     private HomeController controller;
 
-    @Test
-    public void contextLoads() throws Exception {
-        assertThat(controller.greeting()).isEqualTo("Hello, World!");
-    }
+//    @Test
+//    public void contextLoads() throws Exception {
+//        assertThat(controller.greeting()).isEqualTo("Hello, World!");
+//    }
 }
