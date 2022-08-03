@@ -18,5 +18,4 @@ public class HomeControllerTest {
         assertThat(controller.greeting()).isEqualTo("Hello, World!");
     }
 
-
 }
