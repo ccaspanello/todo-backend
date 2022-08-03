@@ -36,5 +36,6 @@ jobs:
         run: |
           git config --global user.name 'Chris Caspanello'
           git config --global user.email 'ccaspanello@gmail.com'
-          releaseVersion=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+          oldSnapshot=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+          releaseVersion="${oldSnapshot//-SNAPSHOT}"
           mvn release:prepare -DdevelopmentVersion=${{ github.event.inputs.nextSnapshotVersion }} -DreleaseVersion=$releaseVersion -Dtag=releases/$releaseVersion
